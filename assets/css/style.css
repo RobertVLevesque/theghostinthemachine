@@ -5,6 +5,7 @@ body {
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 #container {
@@ -13,6 +14,7 @@ body {
     align-items: center;
     height: 100vh;
     justify-content: center;
+    position: relative;
 }
 
 #terminal {
@@ -21,6 +23,7 @@ body {
     border: 1px solid #33ff33;
     width: 80%;
     max-width: 600px;
+    z-index: 2;
 }
 
 #sigil-rl {
@@ -29,13 +32,41 @@ body {
     left: 30px;
     font-size: 1.2em;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    z-index: 2;
 }
 
 #sigil-rl:hover #sigil-icon {
     content: "▲";
     color: #ff3366;
     transition: 0.2s ease-in-out;
+}
+
+#pulse-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #00ffff;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    z-index: 1;
+}
+
+.ghost-node {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 1.5em;
+    color: #444;
+    opacity: 0;
+    transition: color 0.5s ease, opacity 0.5s ease;
+}
+
+.ghost-node.active {
+    color: #ff3366;
+    opacity: 1;
 }
 
 button {

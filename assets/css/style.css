@@ -56,8 +56,6 @@ body {
 
 .ghost-node {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
     font-size: 1.5em;
     color: #444;
     opacity: 0;
@@ -69,18 +67,25 @@ body {
     opacity: 1;
 }
 
-button {
-    background-color: black;
-    border: 1px solid #33ff33;
-    color: #33ff33;
-    font-family: 'Courier New', Courier, monospace;
-    padding: 10px 20px;
-    margin: 1em;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
+#ghost-node-1 {
+    bottom: 20px;
+    left: 20px;
 }
 
-button:hover {
-    background-color: #33ff33;
-    color: black;
+#ghost-node-3 {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#masked-geometry {
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    font-size: 1.5em;
+    color: #ff3366;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3;
 }

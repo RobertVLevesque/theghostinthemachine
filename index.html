@@ -11,7 +11,9 @@
             <span id="sigil-icon">RL</span>
         </div>
         <div id="pulse-line"></div>
+        <div id="masked-geometry" onclick="activateMaskedGeometry()">▲</div>
         <div id="ghost-node-1" class="ghost-node">◉</div>
+        <div id="ghost-node-3" class="ghost-node">◉</div>
         <div id="terminal">
             <p class="line" id="welcome-line">[SYSTEM] Game Over. Would you like to play again?</p>
             <div id="choices">
@@ -20,6 +22,7 @@
             </div>
         </div>
     </div>
+    <audio id="blip" src="assets/audio/blip.mp3" preload="auto"></audio>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

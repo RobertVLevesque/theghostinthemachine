@@ -2,16 +2,24 @@
 function playAgain() {
     localStorage.setItem('visited', 'true');
     alert('Cipher reset. Begin again...');
-    // Trigger ghost animation and reset cipher here
 }
 
 function skipCipher() {
     localStorage.setItem('visited', 'true');
     alert('Key appears. Proceed to site.');
-    // Redirect or unlock full site here
 }
 
-window.onload = function() {
+function activateRLSigil() {
+    const icon = document.getElementById("sigil-icon");
+    if (!localStorage.getItem("sigil_rl")) {
+        icon.innerText = "▲";
+        icon.style.color = "#ff3366";
+        localStorage.setItem("sigil_rl", "true");
+        console.log("RL sigil activated.");
+    }
+}
+
+window.onload = function () {
     if (!localStorage.getItem('visited')) {
         document.getElementById('welcome-line').innerText = "[SYSTEM] Initial access. Cipher loading...";
         document.getElementById('choices').style.display = "none";

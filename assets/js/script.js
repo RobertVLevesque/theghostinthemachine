@@ -1,7 +1,9 @@
 
 function playAgain() {
     localStorage.setItem('visited', 'true');
+    localStorage.removeItem("sigil_rl");
     alert('Cipher reset. Begin again...');
+    location.reload();
 }
 
 function skipCipher() {
@@ -47,11 +49,5 @@ window.onload = function () {
         }, 2000);
     }
 
-    if (localStorage.getItem("sigil_rl")) {
-        document.getElementById("ghost-node-1").classList.add("active");
-    }
-
-    if (localStorage.getItem("sigil_masked")) {
-        document.getElementById("ghost-node-3").classList.add("active");
-    }
+    // no auto-activation, user must re-hover to retrigger
 };

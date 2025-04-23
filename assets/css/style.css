@@ -7,7 +7,6 @@ body {
     padding: 0;
     overflow: hidden;
 }
-
 #container {
     display: flex;
     flex-direction: column;
@@ -16,7 +15,6 @@ body {
     justify-content: center;
     position: relative;
 }
-
 #terminal {
     text-align: center;
     padding: 2em;
@@ -25,7 +23,6 @@ body {
     max-width: 600px;
     z-index: 2;
 }
-
 #sigil-rl {
     position: absolute;
     top: 20px;
@@ -34,13 +31,11 @@ body {
     cursor: pointer;
     z-index: 3;
 }
-
 #sigil-rl:hover #sigil-icon {
     content: "▲";
     color: #ff3366;
     transition: 0.2s ease-in-out;
 }
-
 #pulse-origin {
     position: absolute;
     bottom: 40%;
@@ -51,7 +46,6 @@ body {
     border-radius: 50%;
     z-index: 1;
 }
-
 #pulse-line {
     position: absolute;
     bottom: 40%;
@@ -64,7 +58,6 @@ body {
     z-index: 1;
     box-shadow: 0 0 5px #ff3366;
 }
-
 .ghost-node {
     position: absolute;
     font-size: 1.5em;
@@ -72,23 +65,19 @@ body {
     opacity: 0;
     transition: color 0.5s ease, opacity 0.5s ease;
 }
-
 .ghost-node.active {
     color: #ff3366;
     opacity: 1;
 }
-
 #ghost-node-1 {
     bottom: 20px;
     left: 20px;
 }
-
 #ghost-node-3 {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
 }
-
 button {
     background-color: black;
     border: 1px solid #33ff33;
@@ -99,7 +88,6 @@ button {
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
 }
-
 button:hover {
     background-color: #33ff33;
     color: black;

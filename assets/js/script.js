@@ -87,3 +87,5 @@ window.onload = function () {
 
     checkReveal();
 };
+
+// ghost image reveal handled via .glow class applied to ghost container

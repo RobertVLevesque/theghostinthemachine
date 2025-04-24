@@ -1,69 +1,59 @@
 
 body {
-    background-color: #000;
+    background: black;
     color: #33ff33;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', monospace;
     margin: 0;
     padding: 0;
-    overflow: hidden;
 }
 #container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    justify-content: center;
     position: relative;
-}
-#terminal {
-    text-align: center;
-    padding: 2em;
-    border: 1px solid #33ff33;
-    width: 80%;
-    max-width: 600px;
-    z-index: 2;
+    width: 100vw;
+    height: 100vh;
 }
 #sigil-rl {
     position: absolute;
     top: 20px;
-    left: 30px;
-    font-size: 1.2em;
+    left: 20px;
     cursor: pointer;
-    z-index: 3;
 }
-#sigil-rl:hover #sigil-icon {
-    content: "▲";
-    color: #ff3366;
-    transition: 0.2s ease-in-out;
-}
-#ghost {
+#ghost-container {
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
-    width: 100px;
-    height: 120px;
-    transform: translateX(-50%);
-    background: transparent;
-    transition: filter 0.6s ease;
+    width: 240px;
+    height: auto;
+    transform: translate(-50%, -50%);
 }
-#ghost.glow {
-    filter: drop-shadow(0 0 10px #ff3366);
+#ghost-img {
+    width: 100%;
+    display: block;
 }
 .eye {
-    width: 12px;
-    height: 12px;
-    background-color: #330000;
-    border-radius: 50%;
     position: absolute;
-    top: 20px;
-    transition: background-color 0.4s ease;
+    width: 16px;
+    height: 16px;
+    background: red;
+    border-radius: 50%;
+    opacity: 0.6;
 }
-.eye.left { left: 20px; }
-.eye.right { right: 20px; }
+.eye.left { top: 23%; left: 28%; }
+.eye.right { top: 23%; right: 28%; }
 
-#sigil-rl:hover ~ #ghost .eye {
-    background-color: #ff3333;
+.ghost-node {
+    position: absolute;
+    font-size: 1.5em;
+    color: #444;
+    opacity: 0;
+    transition: all 0.3s ease;
 }
+.ghost-node.active {
+    opacity: 1;
+    color: #ff3366;
+}
+#ghost-node-1 { bottom: 12%; left: 18%; }
+#ghost-node-2 { bottom: 5%; left: 46%; }
+#ghost-node-3 { bottom: 12%; right: 18%; }
 
 #triangle-1, #triangle-2, #triangle-3 {
     position: absolute;
@@ -71,68 +61,30 @@ body {
     color: #ff6600;
     opacity: 0;
     cursor: pointer;
-    transition: opacity 0.3s ease;
-    z-index: 3;
 }
 #triangle-1 { top: 30px; left: 30px; }
 #triangle-2 { top: 30px; right: 30px; }
 #triangle-3 { bottom: 30px; right: 30px; }
 
-#triangle-1.hacker,
-#triangle-2.hacker,
-#triangle-3.hacker {
+#triangle-1.hacker, #triangle-2.hacker, #triangle-3.hacker {
     color: #ff3366;
 }
 
-#surge-line-1, #surge-line-2, #surge-line-3 {
+#terminal {
     position: absolute;
-    width: 2px;
-    height: 0;
-    background: #ff3366;
-    opacity: 0;
-    z-index: 1;
-    transition: height 0.3s ease-out, opacity 0.3s ease-out;
-}
-#surge-line-1 { top: 50px; left: 30px; }
-#surge-line-2 { top: 50px; right: 30px; }
-#surge-line-3 { bottom: 60px; right: 30px; }
-
-.ghost-node {
-    position: absolute;
-    font-size: 1.5em;
-    color: #444;
-    opacity: 0;
-    transition: color 0.5s ease, opacity 0.5s ease;
-}
-.ghost-node.active {
-    color: #ff3366;
-    opacity: 1;
-}
-#ghost-node-1 { bottom: 20px; left: 20px; }
-#ghost-node-2 { bottom: 20px; right: 20px; }
-#ghost-node-3 { bottom: 20px; left: 50%; transform: translateX(-50%); }
-
-button {
-    background-color: black;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
     border: 1px solid #33ff33;
+    padding: 20px;
+    width: 300px;
+}
+button {
+    background: black;
     color: #33ff33;
-    font-family: 'Courier New', Courier, monospace;
-    padding: 10px 20px;
-    margin: 1em;
+    border: 1px solid #33ff33;
+    padding: 0.5em 1em;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-}
-button:hover {
-    background-color: #33ff33;
-    color: black;
-}
-
-#ghost img {
-    display: none;
-    width: 100px;
-    height: auto;
-}
-#ghost.glow img {
-    display: block;
-    filter: drop-shadow(0 0 10px #ff3366);
+    margin: 10px;
 }

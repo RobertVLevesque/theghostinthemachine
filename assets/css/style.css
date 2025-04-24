@@ -126,3 +126,13 @@ button:hover {
     background-color: #33ff33;
     color: black;
 }
+
+#ghost img {
+    display: none;
+    width: 100px;
+    height: auto;
+}
+#ghost.glow img {
+    display: block;
+    filter: drop-shadow(0 0 10px #ff3366);
+}

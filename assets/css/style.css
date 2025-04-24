@@ -44,6 +44,10 @@ body {
     height: 120px;
     transform: translateX(-50%);
     background: transparent;
+    transition: filter 0.6s ease;
+}
+#ghost.glow {
+    filter: drop-shadow(0 0 10px #ff3366);
 }
 .eye {
     width: 12px;
@@ -54,19 +58,15 @@ body {
     top: 20px;
     transition: background-color 0.4s ease;
 }
-.eye.left {
-    left: 20px;
-}
-.eye.right {
-    right: 20px;
-}
+.eye.left { left: 20px; }
+.eye.right { right: 20px; }
+
 #sigil-rl:hover ~ #ghost .eye {
     background-color: #ff3333;
 }
-#triangle-1 {
+
+#triangle-1, #triangle-2, #triangle-3 {
     position: absolute;
-    top: 30px;
-    left: 30px;
     font-size: 2em;
     color: #ff6600;
     opacity: 0;
@@ -74,22 +74,17 @@ body {
     transition: opacity 0.3s ease;
     z-index: 3;
 }
-#triangle-2 {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    font-size: 2em;
-    color: #ff6600;
-    opacity: 0;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-    z-index: 3;
-}
+#triangle-1 { top: 30px; left: 30px; }
+#triangle-2 { top: 30px; right: 30px; }
+#triangle-3 { bottom: 30px; right: 30px; }
+
 #triangle-1.hacker,
-#triangle-2.hacker {
+#triangle-2.hacker,
+#triangle-3.hacker {
     color: #ff3366;
 }
-#surge-line-1, #surge-line-2 {
+
+#surge-line-1, #surge-line-2, #surge-line-3 {
     position: absolute;
     width: 2px;
     height: 0;
@@ -98,14 +93,10 @@ body {
     z-index: 1;
     transition: height 0.3s ease-out, opacity 0.3s ease-out;
 }
-#surge-line-1 {
-    top: 50px;
-    left: 30px;
-}
-#surge-line-2 {
-    top: 50px;
-    right: 30px;
-}
+#surge-line-1 { top: 50px; left: 30px; }
+#surge-line-2 { top: 50px; right: 30px; }
+#surge-line-3 { bottom: 60px; right: 30px; }
+
 .ghost-node {
     position: absolute;
     font-size: 1.5em;
@@ -117,15 +108,10 @@ body {
     color: #ff3366;
     opacity: 1;
 }
-#ghost-node-1 {
-    bottom: 20px;
-    left: 20px;
-}
-#ghost-node-3 {
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
+#ghost-node-1 { bottom: 20px; left: 20px; }
+#ghost-node-2 { bottom: 20px; right: 20px; }
+#ghost-node-3 { bottom: 20px; left: 50%; transform: translateX(-50%); }
+
 button {
     background-color: black;
     border: 1px solid #33ff33;

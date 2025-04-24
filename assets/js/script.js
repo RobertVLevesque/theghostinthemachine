@@ -1,7 +1,6 @@
 
 function playAgain() {
-    localStorage.setItem('visited', 'true');
-    localStorage.removeItem("sigil_rl");
+    localStorage.clear();
     alert('Cipher reset. Begin again...');
     location.reload();
 }
@@ -10,18 +9,31 @@ function skipCipher() {
     alert('Key appears. Proceed to site.');
 }
 function activateRLSigil() {
+    const triangle = document.getElementById("triangle-1");
     if (!localStorage.getItem("sigil_rl")) {
         localStorage.setItem("sigil_rl", "true");
-        console.log("RL activated");
+        triangle.style.opacity = 1;
+    }
+}
+function triggerTriangleOne() {
+    const triangle = document.getElementById("triangle-1");
+    const surge = document.getElementById("surge-line-1");
+    const node = document.getElementById("ghost-node-1");
+
+    if (!localStorage.getItem("triangle_1")) {
+        triangle.classList.add("hacker");
+        surge.style.opacity = 1;
+        surge.style.height = "100px";
+        setTimeout(() => {
+            node.classList.add("active");
+        }, 400);
+        localStorage.setItem("triangle_1", "true");
     }
 }
 window.onload = function () {
-    if (!localStorage.getItem('visited')) {
-        document.getElementById('welcome-line').innerText = "[SYSTEM] Initial access. Cipher loading...";
-        document.getElementById('choices').style.display = "none";
-        setTimeout(() => {
-            document.getElementById('welcome-line').innerText = "[SYSTEM] Game Over. Would you like to play again?";
-            document.getElementById('choices').style.display = "block";
-        }, 2000);
+    if (localStorage.getItem("triangle_1")) {
+        document.getElementById("triangle-1").classList.add("hacker");
+        document.getElementById("ghost-node-1").classList.add("active");
+        document.getElementById("triangle-1").style.opacity = 1;
     }
 };

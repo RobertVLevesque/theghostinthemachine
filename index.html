@@ -7,27 +7,22 @@
 </head>
 <body>
     <div id="container">
-        <div id="sigil-rl" onmouseover="activateRLSigil()" title="RL"><span id="sigil-icon">RL</span></div>
-        <div id="ghost" class="">
-            <img src="assets/ghost.jpg" alt="The Ghost">
+        <div id="sigil-rl" onmouseover="activateRLSigil()">RL</div>
+        <div id="ghost-container">
+            <img src="assets/img/ghost.png" id="ghost-img" alt="Ghost">
             <div class="eye left"></div>
             <div class="eye right"></div>
+            <div class="ghost-node" id="ghost-node-1">◉</div>
+            <div class="ghost-node" id="ghost-node-2">◉</div>
+            <div class="ghost-node" id="ghost-node-3">◉</div>
         </div>
         <div id="triangle-1" onclick="triggerTriangleOne()">▲</div>
-        <div id="surge-line-1"></div>
         <div id="triangle-2" onclick="triggerTriangleTwo()">▲</div>
-        <div id="surge-line-2"></div>
         <div id="triangle-3" onclick="triggerTriangleThree()">▲</div>
-        <div id="surge-line-3"></div>
-        <div id="ghost-node-1" class="ghost-node">◉</div>
-        <div id="ghost-node-2" class="ghost-node">◉</div>
-        <div id="ghost-node-3" class="ghost-node">◉</div>
         <div id="terminal">
-            <p class="line" id="welcome-line">[SYSTEM] Game Over. Would you like to play again?</p>
-            <div id="choices">
-                <button onclick="playAgain()">Yes</button>
-                <button onclick="skipCipher()">No</button>
-            </div>
+            <p>[SYSTEM] Game Over. Would you like to play again?</p>
+            <button onclick="playAgain()">Yes</button>
+            <button onclick="skipCipher()">No</button>
         </div>
     </div>
     <script src="assets/js/script.js"></script>

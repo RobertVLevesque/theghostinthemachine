@@ -36,47 +36,32 @@ body {
     color: #ff3366;
     transition: 0.2s ease-in-out;
 }
-#pulse-origin {
+#ghost {
     position: absolute;
-    bottom: 40%;
+    top: 30%;
     left: 50%;
-    width: 4px;
-    height: 4px;
-    background: transparent;
-    border-radius: 50%;
-    z-index: 1;
-}
-#pulse-line {
-    position: absolute;
-    bottom: 40%;
-    left: 50%;
-    height: 2px;
-    width: 0%;
-    background: #ff3366;
-    opacity: 0;
+    width: 100px;
+    height: 120px;
     transform: translateX(-50%);
-    z-index: 1;
-    box-shadow: 0 0 5px #ff3366;
+    background: transparent;
 }
-.ghost-node {
+.eye {
+    width: 12px;
+    height: 12px;
+    background-color: #330000;
+    border-radius: 50%;
     position: absolute;
-    font-size: 1.5em;
-    color: #444;
-    opacity: 0;
-    transition: color 0.5s ease, opacity 0.5s ease;
+    top: 20px;
+    transition: background-color 0.4s ease;
 }
-.ghost-node.active {
-    color: #ff3366;
-    opacity: 1;
-}
-#ghost-node-1 {
-    bottom: 20px;
+.eye.left {
     left: 20px;
 }
-#ghost-node-3 {
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+.eye.right {
+    right: 20px;
+}
+#sigil-rl:hover ~ #ghost .eye {
+    background-color: #ff3333;
 }
 button {
     background-color: black;

@@ -46,16 +46,16 @@ body {
     position: absolute;
     font-size: 1.5em;
     color: #444;
-    opacity: 0;
+    opacity: 1;
     transition: all 1.3s ease;
 }
 .ghost-node.active {
-    opacity: 1;
+    opacity: 0;
     color: #ff3366;
 }
-#ghost-node-1 { bottom: 14%; left: 19%; }
-#ghost-node-2 { bottom: 13%; left: 46%; }
-#ghost-node-3 { bottom: 14%; right: 19%; }
+#ghost-node-1 { bottom: 11%; left: 19%; }
+#ghost-node-2 { bottom: 12%; left: 46%; }
+#ghost-node-3 { bottom: 11%; right: 19%; }
 
 #triangle-1, #triangle-2, #triangle-3 {
     position: absolute;

@@ -74,14 +74,23 @@ body {
     transition: opacity 0.3s ease;
     z-index: 3;
 }
-#triangle-1.hacker {
-    color: #ff3366;
-    content: "👾";
-}
-#surge-line-1 {
+#triangle-2 {
     position: absolute;
-    top: 50px;
-    left: 30px;
+    top: 30px;
+    right: 30px;
+    font-size: 2em;
+    color: #ff6600;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+}
+#triangle-1.hacker,
+#triangle-2.hacker {
+    color: #ff3366;
+}
+#surge-line-1, #surge-line-2 {
+    position: absolute;
     width: 2px;
     height: 0;
     background: #ff3366;
@@ -89,10 +98,16 @@ body {
     z-index: 1;
     transition: height 0.3s ease-out, opacity 0.3s ease-out;
 }
+#surge-line-1 {
+    top: 50px;
+    left: 30px;
+}
+#surge-line-2 {
+    top: 50px;
+    right: 30px;
+}
 .ghost-node {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
     font-size: 1.5em;
     color: #444;
     opacity: 0;
@@ -101,6 +116,15 @@ body {
 .ghost-node.active {
     color: #ff3366;
     opacity: 1;
+}
+#ghost-node-1 {
+    bottom: 20px;
+    left: 20px;
+}
+#ghost-node-3 {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 button {
     background-color: black;

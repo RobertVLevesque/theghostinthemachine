@@ -13,8 +13,8 @@ body {
 }
 #sigil-rl {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 40px;
+    left: 40px;
     cursor: pointer;
 }
 #ghost-container {
@@ -39,8 +39,8 @@ body {
     border-radius: 50%;
     opacity: 0.6;
 }
-.eye.left { top: 30%; left: 39%; }
-.eye.right { top: 20%; right: 39%; }
+.eye.left { top: 26%; left: 38%; }
+.eye.right { top: 26%; right: 38%; }
 
 .ghost-node {
     position: absolute;
@@ -59,14 +59,14 @@ body {
 
 #triangle-1, #triangle-2, #triangle-3 {
     position: absolute;
-    font-size: 2em;
+    font-size: 6em;
     color: #ff6600;
     opacity: 0;
     cursor: pointer;
 }
-#triangle-1 { top: 30px; left: 30px; }
-#triangle-2 { top: 30px; right: 30px; }
-#triangle-3 { bottom: 30px; right: 30px; }
+#triangle-1 { top: 50px; left: 50px; }
+#triangle-2 { top: 50px; right: 50px; }
+#triangle-3 { bottom: 50px; right: 50px; }
 
 #triangle-1.hacker, #triangle-2.hacker, #triangle-3.hacker {
     color: #ff3366;

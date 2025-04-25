@@ -1,7 +1,25 @@
 
-function activateRLSigil() {
-  document.getElementById("sigil-rl").classList.add("active");
+function flickerNodes() {
+  const nodes = document.querySelectorAll('.ghost-node');
+  let count = 0;
+  const flicker = setInterval(() => {
+    nodes.forEach((node, index) => {
+      node.style.opacity = (node.style.opacity === "1") ? "0.2" : "1";
+    });
+    count++;
+    if (count > 5) {
+      clearInterval(flicker);
+      nodes.forEach(n => n.style.opacity = "0"); // Hide again
+      // Trigger real activation
+      triggerTriangleOne();
+    }
+  }, 200);
 }
+
+function activateRLSigil() {
+  flickerNodes();
+}
+
 function triggerTriangleOne() {
   const node = document.getElementById("ghost-node-1");
   node.classList.add("active");

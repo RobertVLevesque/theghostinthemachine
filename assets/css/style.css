@@ -46,11 +46,11 @@ body {
     position: absolute;
     font-size: 1.5em;
     color: #444;
-    opacity: 1;
-    transition: all 1.3s ease;
+    opacity: 0;
+    transition: all 0.3s ease;
 }
 .ghost-node.active {
-    opacity: 0;
+    opacity: 1;
     color: #ff3366;
 }
 #ghost-node-1 { bottom: 11%; left: 19%; }

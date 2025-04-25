@@ -1,37 +1,25 @@
 
 function activateRLSigil() {
-    document.getElementById("triangle-1").style.opacity = 1;
-    document.getElementById("triangle-2").style.opacity = 1;
-    document.getElementById("triangle-3").style.opacity = 1;
+  document.getElementById("sigil-rl").classList.add("active");
 }
-
 function triggerTriangleOne() {
-    const t = document.getElementById("triangle-1");
-    const n = document.getElementById("ghost-node-1");
-    if (!t.classList.contains("hacker")) {
-        t.classList.add("hacker");
-        n.classList.add("active");
-    }
+  const node = document.getElementById("ghost-node-1");
+  node.classList.add("active");
+  document.getElementById("triangle-1").classList.add("reveal");
 }
 function triggerTriangleTwo() {
-    const t = document.getElementById("triangle-2");
-    const n = document.getElementById("ghost-node-3");
-    if (!t.classList.contains("hacker")) {
-        t.classList.add("hacker");
-        n.classList.add("active");
-    }
+  const node = document.getElementById("ghost-node-3");
+  node.classList.add("active");
+  document.getElementById("triangle-2").classList.add("reveal");
 }
 function triggerTriangleThree() {
-    const t = document.getElementById("triangle-3");
-    const n = document.getElementById("ghost-node-2");
-    if (!t.classList.contains("hacker")) {
-        t.classList.add("hacker");
-        n.classList.add("active");
-    }
+  const node = document.getElementById("ghost-node-2");
+  node.classList.add("active");
+  document.getElementById("triangle-3").classList.add("reveal");
 }
 function playAgain() {
-    location.reload();
+  location.reload();
 }
 function skipCipher() {
-    alert("Key revealed.");
+  alert("Key revealed.");
 }

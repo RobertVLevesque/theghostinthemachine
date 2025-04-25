@@ -1,92 +1,92 @@
 
 body {
-    background: black;
-    color: #33ff33;
-    font-family: 'Courier New', monospace;
-    margin: 0;
-    padding: 0;
+  background: black;
+  color: #33ff33;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
 }
 #container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
 }
 #sigil-rl {
-    position: absolute;
-    top: 40px;
-    left: 40px;
-    cursor: pointer;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  cursor: pointer;
+  font-size: 2.5rem;
+  font-family: 'Orbitron', monospace;
+  color: #ff3366;
+  letter-spacing: 2px;
 }
 #ghost-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 20vw;
-    max-width: 320px;
-    min-width: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20vw;
+  max-width: 320px;
+  min-width: 200px;
 }
-#ghost-img {
-    width: 100%;
-    height: auto;
-    display: block;
+.ghost-icon.glow {
+  filter: drop-shadow(0 0 5px white);
+  width: 100%;
+  height: auto;
 }
 .eye {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    background: red;
-    border-radius: 50%;
-    opacity: 0.6;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: red;
+  border-radius: 50%;
+  opacity: 0.6;
 }
-.eye.left { top: 26%; left: 38%; }
-.eye.right { top: 26%; right: 38%; }
+.eye.left { top: 23%; left: 28%; }
+.eye.right { top: 23%; right: 28%; }
 
 .ghost-node {
-    position: absolute;
-    font-size: 1.5em;
-    color: #444;
-    opacity: 0;
-    transition: all 0.3s ease;
+  position: absolute;
+  font-size: 1.5em;
+  color: #444;
+  opacity: 0;
+  transition: all 0.3s ease;
 }
 .ghost-node.active {
-    opacity: 1;
-    color: #ff3366;
+  opacity: 1;
+  color: #ff3366;
 }
-#ghost-node-1 { bottom: 11%; left: 19%; }
-#ghost-node-2 { bottom: 12%; left: 46%; }
-#ghost-node-3 { bottom: 11%; right: 19%; }
+#ghost-node-1 { bottom: 12%; left: 18%; }
+#ghost-node-2 { bottom: 5%; left: 46%; }
+#ghost-node-3 { bottom: 12%; right: 18%; }
 
 #triangle-1, #triangle-2, #triangle-3 {
-    position: absolute;
-    font-size: 6em;
-    color: #ff6600;
-    opacity: 0;
-    cursor: pointer;
+  position: absolute;
+  font-size: 2em;
+  color: #ff3366;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
-#triangle-1 { top: 50px; left: 50px; }
-#triangle-2 { top: 50px; right: 50px; }
-#triangle-3 { bottom: 50px; right: 50px; }
-
-#triangle-1.hacker, #triangle-2.hacker, #triangle-3.hacker {
-    color: #ff3366;
-}
+#triangle-1.reveal { opacity: 1; top: -40px; left: -40px; }
+#triangle-2.reveal { opacity: 1; top: -40px; right: -40px; }
+#triangle-3.reveal { opacity: 1; bottom: -40px; right: -40px; }
 
 #terminal {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    border: 1px solid #33ff33;
-    padding: 20px;
-    width: 300px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  border: 1px solid #33ff33;
+  padding: 20px;
+  width: 300px;
 }
 button {
-    background: black;
-    color: #33ff33;
-    border: 1px solid #33ff33;
-    padding: 0.5em 1em;
-    cursor: pointer;
-    margin: 10px;
+  background: black;
+  color: #33ff33;
+  border: 1px solid #33ff33;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  margin: 10px;
 }

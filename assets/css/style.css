@@ -1,92 +1,52 @@
 
-body {
-  background: black;
-  color: #33ff33;
-  font-family: 'Courier New', monospace;
-  margin: 0;
-  padding: 0;
+clip: rect(0, 9999px, 80%, 0);
+transform: translate(-2px, -2px);
 }
-#container {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
 }
-#sigil-rl {
-  position: absolute;
-  top: 40px;
-  left: 40px;
-  cursor: pointer;
-  font-size: 3.5rem;
-  font-family: 'Orbitron', monospace;
-  color: #ff3366;
-  letter-spacing: 2px;
-}
-#ghost-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 20vw;
-  max-width: 320px;
-  min-width: 200px;
-}
-.ghost-icon.glow {
-  filter: drop-shadow(0 0 5px white);
-  width: 100%;
-  height: auto;
-}
-.eye {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  background: red;
-  border-radius: 50%;
-  opacity: 0.6;
-}
-.eye.left { top: 23%; left: 28%; }
-.eye.right { top: 23%; right: 28%; }
 
-.ghost-node {
-  position: absolute;
-  font-size: 1.5em;
-  color: #444;
-  opacity: 0;
-  transition: all 0.3s ease;
-}
-.ghost-node.active {
-  opacity: 1;
-  color: #ff3366;
-}
-#ghost-node-1 { bottom: 12%; left: 18%; }
-#ghost-node-2 { bottom: 5%; left: 46%; }
-#ghost-node-3 { bottom: 12%; right: 18%; }
 
-#triangle-1, #triangle-2, #triangle-3 {
-  position: absolute;
-  font-size: 2em;
-  color: #ff3366;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+@keyframes glitchBottom {
+0% {
+clip: rect(80%, 9999px, 100%, 0);
 }
-#triangle-1.reveal { opacity: 1; top: -40px; left: -40px; }
-#triangle-2.reveal { opacity: 1; top: -40px; right: -40px; }
-#triangle-3.reveal { opacity: 1; bottom: -40px; right: -40px; }
+100% {
+clip: rect(20%, 9999px, 100%, 0);
+transform: translate(2px, 2px);
+}
+}
 
-#terminal {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  border: 1px solid #33ff33;
-  padding: 20px;
-  width: 300px;
+
+button#activate {
+margin-top: 2em;
+padding: 0.75em 2em;
+font-size: 1em;
+color: #fff;
+background-color: #ff0040;
+border: none;
+cursor: pointer;
+border-radius: 4px;
 }
-button {
-  background: black;
-  color: #33ff33;
-  border: 1px solid #33ff33;
-  padding: 0.5em 1em;
-  cursor: pointer;
-  margin: 10px;
+
+
+.nodes {
+display: flex;
+justify-content: center;
+margin-top: 3em;
+gap: 1.5em;
+}
+
+
+.node {
+width: 50px;
+height: 50px;
+background-color: #00ffcc;
+border-radius: 50%;
+opacity: 0.2;
+transition: opacity 0.4s ease, box-shadow 0.4s ease;
+}
+
+
+.node.active {
+opacity: 1;
+box-shadow: 0 0 12px 4px #00ffcc;
 }

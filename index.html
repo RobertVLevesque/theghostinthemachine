@@ -1,135 +1,23 @@
-<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ghost in the Machine</title>
+  <title>Ghost Activation</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1 class="glitch" data-text="Ghost in the Machine">Ghost in the Machine</h1>
-      <button id="activate">Activate</button>
-    </header>
-
-    <section class="nodes">
-      <div class="node" id="node1"></div>
-      <div class="node" id="node2"></div>
-      <div class="node" id="node3"></div>
-    </section>
+  <div id="container">
+    <img id="ghost" src="ghost_outlined.png" alt="Ghost" />
+    <div id="rl-sigal">RL</div>
+    <div class="node" id="node-1"></div>
+    <div class="node" id="node-2"></div>
+    <div class="node" id="node-3"></div>
+    <div class="triangle" id="triangle-1"></div>
+    <div class="triangle" id="triangle-2"></div>
+    <div class="triangle" id="triangle-3"></div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
-
-/* style.css */
-body {
-  background-color: #010203;
-  color: #00ffcc;
-  font-family: 'Courier New', monospace;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-.container {
-  text-align: center;
-  padding: 3em 1em;
-}
-
-.glitch {
-  font-size: 3em;
-  position: relative;
-  color: #00ffcc;
-}
-
-.glitch::before,
-.glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  width: 100%;
-  color: #ff00cc;
-  background: black;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-}
-
-.glitch::before {
-  animation: glitchTop 1s infinite linear alternate-reverse;
-}
-
-.glitch::after {
-  animation: glitchBottom 1.5s infinite linear alternate-reverse;
-}
-
-@keyframes glitchTop {
-  0% {
-    clip: rect(0, 9999px, 0, 0);
-  }
-  100% {
-    clip: rect(0, 9999px, 80%, 0);
-    transform: translate(-2px, -2px);
-  }
-}
-
-@keyframes glitchBottom {
-  0% {
-    clip: rect(80%, 9999px, 100%, 0);
-  }
-  100% {
-    clip: rect(20%, 9999px, 100%, 0);
-    transform: translate(2px, 2px);
-  }
-}
-
-button#activate {
-  margin-top: 2em;
-  padding: 0.75em 2em;
-  font-size: 1em;
-  color: #fff;
-  background-color: #ff0040;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.nodes {
-  display: flex;
-  justify-content: center;
-  margin-top: 3em;
-  gap: 1.5em;
-}
-
-.node {
-  width: 50px;
-  height: 50px;
-  background-color: #00ffcc;
-  border-radius: 50%;
-  opacity: 0.2;
-  transition: opacity 0.4s ease, box-shadow 0.4s ease;
-}
-
-.node.active {
-  opacity: 1;
-  box-shadow: 0 0 12px 4px #00ffcc;
-}
-
-/* script.js */
-const nodes = document.querySelectorAll('.node');
-const button = document.getElementById('activate');
-
-let current = 0;
-
-button.addEventListener('click', () => {
-  if (current < nodes.length) {
-    nodes[current].classList.add('active');
-    current++;
-  } else {
-    button.innerText = 'All Nodes Activated';
-    button.disabled = true;
-  }
-});

@@ -1,26 +1,33 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const rlButton = document.getElementById('rl-btn');
+document.getElementById('rl-button').addEventListener('click', () => {
+  // Glow eyes
   const leftEye = document.getElementById('left-eye');
   const rightEye = document.getElementById('right-eye');
-  const terminal = document.getElementById('terminal');
+  leftEye.style.opacity = '1';
+  rightEye.style.opacity = '1';
 
-  rlButton.addEventListener('click', () => {
-    // Activate eyes
-    leftEye.classList.add('glow');
-    rightEye.classList.add('glow');
+  setTimeout(() => {
+    leftEye.style.opacity = '0';
+    rightEye.style.opacity = '0';
+  }, 1000);
 
-    // Fade out after 1.5s
-    setTimeout(() => {
-      leftEye.classList.remove('glow');
-      rightEye.classList.remove('glow');
-      leftEye.classList.add('fade-out');
-      rightEye.classList.add('fade-out');
-    }, 1500);
+  // Flash all nodes
+  const dots = [1, 2, 3].map(n => document.getElementById(`dot${n}`));
+  dots.forEach(dot => dot.classList.add('active'));
+  setTimeout(() => {
+    dots.forEach(dot => dot.classList.remove('active'));
+    document.getElementById('dot1').classList.add('active'); // light first node only
+  }, 1000);
 
-    // Show terminal after 2.5s
-    setTimeout(() => {
-      terminal.style.display = 'block';
-      terminal.style.opacity = 1;
-    }, 2500);
-  });
+  // Reveal triangle after flicker
+  setTimeout(() => {
+    const triangle = document.getElementById('triangle');
+    triangle.classList.remove('hidden');
+    triangle.style.opacity = '1';
+  }, 1500);
+
+  // Show console message
+  setTimeout(() => {
+    const consoleBox = document.getElementById('console');
+    consoleBox.classList.remove('hidden');
+  }, 2500);
 });

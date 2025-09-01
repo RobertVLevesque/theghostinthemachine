@@ -3,28 +3,24 @@ body {
   background-color: black;
   color: white;
   font-family: 'Courier New', Courier, monospace;
-  text-align: center;
-}
-
-h1 {
-  margin-top: 30px;
-  font-size: 24px;
-  letter-spacing: 2px;
-}
-
-.ghost-container {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .ghost-img {
-  max-width: 150px;
-  height: auto;
+  width: 200px;
+  margin-bottom: 10px;
+  position: relative;
 }
 
 .eye {
   position: absolute;
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background-color: transparent;
   opacity: 0;
@@ -32,13 +28,13 @@ h1 {
 }
 
 #left-eye {
-  top: 95px;
-  left: 635px;
+  top: 70px;
+  left: 70px;
 }
 
 #right-eye {
-  top: 95px;
-  left: 690px;
+  top: 70px;
+  left: 115px;
 }
 
 .eye.glow {
@@ -49,8 +45,8 @@ h1 {
 
 .eye.fade-out {
   opacity: 0 !important;
-  box-shadow: none !important;
   background-color: transparent !important;
+  box-shadow: none !important;
 }
 
 #terminal {
@@ -67,4 +63,13 @@ h1 {
   display: none;
   opacity: 0;
   transition: opacity 0.6s ease;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
 }

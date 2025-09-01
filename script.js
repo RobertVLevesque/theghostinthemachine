@@ -1,23 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
   const rlButton = document.getElementById('rl-btn');
-  const eyes = document.querySelectorAll('.eye');
+  const leftEye = document.getElementById('left-eye');
+  const rightEye = document.getElementById('right-eye');
   const terminal = document.getElementById('terminal');
 
   rlButton.addEventListener('click', () => {
-    // Glow red
-    eyes.forEach(eye => {
-      eye.classList.add('glow');
-    });
+    // Activate eyes
+    leftEye.classList.add('glow');
+    rightEye.classList.add('glow');
 
-    // Wait 1.5s, then fade out
+    // Fade out after 1.5s
     setTimeout(() => {
-      eyes.forEach(eye => {
-        eye.classList.remove('glow');
-        eye.classList.add('fade-out');
-      });
+      leftEye.classList.remove('glow');
+      rightEye.classList.remove('glow');
+      leftEye.classList.add('fade-out');
+      rightEye.classList.add('fade-out');
     }, 1500);
 
-    // Show terminal after eyes vanish
+    // Show terminal after 2.5s
     setTimeout(() => {
       terminal.style.display = 'block';
       terminal.style.opacity = 1;

@@ -1,70 +1,70 @@
-
 body {
-  background: black;
+  margin: 0;
+  background-color: black;
   color: white;
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
-  padding: 20px;
 }
 
-.glitch {
-  font-size: 2em;
-  position: relative;
-  color: white;
-}
-
-#ghost-container {
-  position: relative;
-  width: 300px;
-  margin: 0 auto;
-}
-
-#ghost {
-  width: 100%;
-  border: none;
-}
-
-.node {
-  width: 20px;
-  height: 20px;
-  background: gray;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 5px;
-}
-
-.node.flicker {
-  animation: flicker 0.3s infinite alternate;
-}
-
-.node.active {
-  background: red;
-}
-
-@keyframes flicker {
-  from { opacity: 0.2; }
-  to { opacity: 1; }
-}
-
-#rl-button {
-  margin-top: 20px;
-  padding: 10px 20px;
+h1 {
+  margin-top: 30px;
   font-size: 24px;
-  background: none;
-  color: white;
-  border: 1px solid white;
-  cursor: pointer;
+  letter-spacing: 2px;
 }
 
-#triangle-button {
-  font-size: 48px;
-  background: none;
-  color: white;
-  border: none;
+.ghost-container {
   margin-top: 20px;
-  cursor: pointer;
 }
 
-.hidden {
+.ghost-img {
+  max-width: 150px;
+  height: auto;
+}
+
+.eye {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: transparent;
+  opacity: 0;
+  transition: opacity 0.4s ease, background-color 0.4s ease;
+}
+
+#left-eye {
+  top: 95px;
+  left: 635px;
+}
+
+#right-eye {
+  top: 95px;
+  left: 690px;
+}
+
+.eye.glow {
+  background-color: red;
+  box-shadow: 0 0 10px red;
+  opacity: 1;
+}
+
+.eye.fade-out {
+  opacity: 0 !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+#terminal {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: #00ff00;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: 2px solid #00ff00;
   display: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
 }

@@ -1,23 +1,26 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const rlButton = document.getElementById('rl-btn');
+  const eyes = document.querySelectorAll('.eye');
+  const terminal = document.getElementById('terminal');
 
-document.addEventListener("DOMContentLoaded", () => {
-  const rlButton = document.getElementById("rl-button");
-  const triangleButton = document.getElementById("triangle-button");
-  const nodes = document.querySelectorAll(".node");
+  rlButton.addEventListener('click', () => {
+    // Glow red
+    eyes.forEach(eye => {
+      eye.classList.add('glow');
+    });
 
-  rlButton.addEventListener("mouseenter", () => {
-    nodes.forEach(node => node.classList.add("flicker"));
-  });
+    // Wait 1.5s, then fade out
+    setTimeout(() => {
+      eyes.forEach(eye => {
+        eye.classList.remove('glow');
+        eye.classList.add('fade-out');
+      });
+    }, 1500);
 
-  rlButton.addEventListener("mouseleave", () => {
-    nodes.forEach(node => node.classList.remove("flicker"));
-  });
-
-  rlButton.addEventListener("click", () => {
-    triangleButton.classList.remove("hidden");
-  });
-
-  triangleButton.addEventListener("click", () => {
-    nodes.forEach(node => node.classList.remove("flicker", "active"));
-    nodes[0].classList.add("active");
+    // Show terminal after eyes vanish
+    setTimeout(() => {
+      terminal.style.display = 'block';
+      terminal.style.opacity = 1;
+    }, 2500);
   });
 });

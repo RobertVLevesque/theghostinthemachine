@@ -1,0 +1,52 @@
+
+clip: rect(0, 9999px, 80%, 0);
+transform: translate(-2px, -2px);
+}
+}
+
+
+@keyframes glitchBottom {
+0% {
+clip: rect(80%, 9999px, 100%, 0);
+}
+100% {
+clip: rect(20%, 9999px, 100%, 0);
+transform: translate(2px, 2px);
+}
+}
+
+
+button#activate {
+margin-top: 2em;
+padding: 0.75em 2em;
+font-size: 1em;
+color: #fff;
+background-color: #ff0040;
+border: none;
+cursor: pointer;
+border-radius: 4px;
+}
+
+
+.nodes {
+display: flex;
+justify-content: center;
+margin-top: 3em;
+gap: 1.5em;
+}
+
+
+.node {
+width: 50px;
+height: 50px;
+background-color: #00ffcc;
+border-radius: 50%;
+opacity: 0.2;
+transition: opacity 0.4s ease, box-shadow 0.4s ease;
+}
+
+
+.node.active {
+opacity: 1;
+box-shadow: 0 0 12px 4px #00ffcc;
+}

@@ -1,24 +1,24 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ghost in the Machine</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <img src="ghost.png" alt="Ghost" class="ghost" />
-    <h1 class="glitch" data-text="Ghost in the Machine">Ghost in the Machine</h1>
-    <div class="rl-symbol">RL</div>
-    <div class="nodes">
-      <div class="node"></div>
-      <div class="node"></div>
-      <div class="node"></div>
-    </div>
-    <button id="activate">Activate</button>
+  <h1 class="glitch" data-text="GHOST IN THE MACHINE">GHOST IN THE MACHINE</h1>
+  <div id="ghost-container">
+    <img src="ghost.png" alt="Ghost" id="ghost" />
   </div>
-
+  <div id="nodes">
+    <div class="node" id="node1"></div>
+    <div class="node" id="node2"></div>
+    <div class="node" id="node3"></div>
+  </div>
+  <button id="rl-button">RL</button>
+  <button id="triangle-button" class="hidden">▲</button>
   <script src="script.js"></script>
 </body>
 </html>

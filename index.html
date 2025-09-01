@@ -1,49 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.5">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ghost in the Machine</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="container">
     <h1 class="title">GHOST IN THE MACHINE</h1>
-    <div id="ghost-box">
-      <img id="ghost" src="ghost.png" alt="Ghost">
-      <div class="eye left"></div>
-      <div class="eye right"></div>
-    <div class="eye" id="left-eye"></div>
-<div class="eye" id="right-eye"></div>
-<div id="terminal">I see you.</div>
-<body>
-  <div class="ghost-img">
-    <img src="ghost.png" alt="Ghost" style="width: 100%;">
-    <div id="left-eye" class="eye"></div>
-    <div id="right-eye" class="eye"></div>
-  </div>
 
-  <button id="rl-btn">RL Activate</button>
-
-
-
-  <script src="script.js"></script>
-</body>
-
+    <div class="ghost-img">
+      <img src="ghost.png" alt="Ghost" />
+      <div id="left-eye" class="eye"></div>
+      <div id="right-eye" class="eye"></div>
     </div>
-    <div class="indicator">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
+
     <div class="button-row">
       <button id="rl-button">RL</button>
-      <div id="triangle"></div>
     </div>
+
+    <div class="indicator">
+      <span class="dot" id="dot1"></span>
+      <span class="dot" id="dot2"></span>
+      <span class="dot" id="dot3"></span>
+    </div>
+
+    <div id="triangle" class="hidden"></div>
+
     <div id="console" class="hidden">
       <p class="typewriter">I see you.</p>
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>

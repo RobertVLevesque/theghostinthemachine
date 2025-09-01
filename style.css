@@ -1,52 +1,70 @@
 
-clip: rect(0, 9999px, 80%, 0);
-transform: translate(-2px, -2px);
-}
-}
-
-
-@keyframes glitchBottom {
-0% {
-clip: rect(80%, 9999px, 100%, 0);
-}
-100% {
-clip: rect(20%, 9999px, 100%, 0);
-transform: translate(2px, 2px);
-}
+body {
+  background: black;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  padding: 20px;
 }
 
-
-button#activate {
-margin-top: 2em;
-padding: 0.75em 2em;
-font-size: 1em;
-color: #fff;
-background-color: #ff0040;
-border: none;
-cursor: pointer;
-border-radius: 4px;
+.glitch {
+  font-size: 2em;
+  position: relative;
+  color: white;
 }
 
-
-.nodes {
-display: flex;
-justify-content: center;
-margin-top: 3em;
-gap: 1.5em;
+#ghost-container {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
 }
 
+#ghost {
+  width: 100%;
+  border: none;
+}
 
 .node {
-width: 50px;
-height: 50px;
-background-color: #00ffcc;
-border-radius: 50%;
-opacity: 0.2;
-transition: opacity 0.4s ease, box-shadow 0.4s ease;
+  width: 20px;
+  height: 20px;
+  background: gray;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 5px;
 }
 
+.node.flicker {
+  animation: flicker 0.3s infinite alternate;
+}
 
 .node.active {
-opacity: 1;
-box-shadow: 0 0 12px 4px #00ffcc;
+  background: red;
+}
+
+@keyframes flicker {
+  from { opacity: 0.2; }
+  to { opacity: 1; }
+}
+
+#rl-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 24px;
+  background: none;
+  color: white;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+#triangle-button {
+  font-size: 48px;
+  background: none;
+  color: white;
+  border: none;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
